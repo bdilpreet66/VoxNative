@@ -383,6 +383,83 @@
         }
 
         /* Responsive */
+        /* Media Gallery */
+        .media-gallery {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .media-video {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 1rem;
+            margin: 0 auto 3rem;
+            display: block;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+            border: 1px solid var(--glass-border);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px -5px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Static Sections */
+        .static-section {
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .static-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .static-section p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-start);
+        }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero { padding: 2rem 1rem; }
@@ -397,6 +474,7 @@
         <div class="logo">VoxNative</div>
         <div class="nav-links">
             <a href="#features">Features</a>
+            <a href="#media">Media</a>
         </div>
     </nav>
 
@@ -468,10 +546,55 @@
 
             </div>
         </section>
+
+        <section id="media" class="media-gallery">
+            <h2 class="section-title">See VoxNative in Action</h2>
+            <video src="./video.mov" controls class="media-video"></video>
+            <div class="image-grid">
+                <img src="./1.png" alt="VoxNative Preview 1">
+                <img src="./2.png" alt="VoxNative Preview 2">
+                <img src="./3.png" alt="VoxNative Preview 3">
+                <img src="./4.png" alt="VoxNative Preview 4">
+                <img src="./5.png" alt="VoxNative Preview 5">
+                <img src="./6.png" alt="VoxNative Preview 6">
+            </div>
+        </section>
+
+        <section id="support" class="static-section">
+            <h2>Support</h2>
+            <p>If you need assistance with VoxNative, our team is here to help.</p>
+            <p>Contact us at: <a href="mailto:sbdilpreet66@gmail.com" style="color: var(--accent-start);">sbdilpreet66@gmail.com</a></p>
+        </section>
+
+        <section id="privacy" class="static-section">
+            <h2>Privacy Policy</h2>
+            <p>At VoxNative, your privacy is our top priority. We designed this application to run 100% locally on your machine.</p>
+            <p>We do not collect, store, or transmit your audio data, transcripts, or personal information to any external servers. All processing is done strictly on-device.</p>
+            <p>For analytics, we only collect anonymous crash reports if explicitly opted in by the user.</p>
+        </section>
+
+        <section id="terms" class="static-section">
+            <h2>Terms of Service</h2>
+            <p>Welcome to VoxNative. By using our application, you agree to these Terms of Service.</p>
+            <p>VoxNative is provided "as is" without any warranties. You are granted a personal, non-exclusive license to use the software for your own speech-to-text and text-to-speech needs.</p>
+            <p>You agree not to reverse-engineer, redistribute, or use the software for any illegal activities.</p>
+        </section>
+        <section id="copyright" class="static-section">
+            <h2>Copyright & Legal</h2>
+            <p>&copy; 2026 VoxNative. All rights reserved.</p>
+            <p>The VoxNative application, including its source code, interface design, and branding, is the property of its creators. The underlying AI models (Kokoro and Whisper) are used under their respective open-source licenses.</p>
+            <p>Users are permitted to use the audio files generated by VoxNative for both personal and commercial projects, provided they comply with the model licenses.</p>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 VoxNative. Built with React, Vite, and Electron.</p>
+        <p>&copy; 2026 VoxNative. All rights reserved. Built with React, Vite, and Electron.</p>
+        <div class="footer-links">
+            <a href="#support">Support</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#copyright">Copyright</a>
+        </div>
     </footer>
 
 </body>
